@@ -9,7 +9,7 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 with codecs.open(os.path.join(here, "LICENSE"), encoding="utf-8") as fh:
     license = "\n" + fh.read()
 
-VERSION = '0.0.1a'
+VERSION = '1.0.0'
 DESCRIPTION = 'Python bindings for cava audio visualizer'
 
 # Setting up
@@ -30,7 +30,6 @@ setup(
         'fifo'
     ],
     classifiers=[
-        'License :: OSI Approved :: GNU General Public License v2',
         'Programming Language :: Python :: 3 :: Only',
         'Operating System :: POSIX :: Linux',
     ],
