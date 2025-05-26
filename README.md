@@ -1,6 +1,8 @@
 # python-libcava
 CAVA audio visualizer bindings for python using FIFO
 
+python-libcava should be thread-safe. However this hasn't been thoroughly tested.
+
 # Usage
 
 ```python
@@ -18,5 +20,15 @@ cava = CAVA(
 )
 
 cava.start()
-sleep
+sleep(3)
+cava.close() # Close the FIFO listener
+```
+
+## Adding extra config to [general]
+
+```python
+cava = CAVA(
+    config="sensitivity = 0"
+    # Will be added under [general]
+)
 ```

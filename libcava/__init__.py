@@ -6,12 +6,13 @@ import atexit
 import os
 
 class CAVA:
-    def __init__(self, bars=10, callback=print):
+    def __init__(self, bars=10, callback=print,config=""):
         self.id = random.randint(11111,99999)
         os.system(f"""
         echo "
         [general]
         bars = {bars}
+        {config}
 
         [output]
         method = raw
@@ -45,6 +46,7 @@ class CAVA:
             sample = [i / 255 for i in struct.unpack("B" * self._chunk,data)]
             self.samples.append(sample)
             self._callback(tuple(sample))
+
     def start(self):
         self._process2 = mp.Process(target=self._run)
         self._process2.start()
